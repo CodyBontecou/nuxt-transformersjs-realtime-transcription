@@ -4,6 +4,10 @@ import {
     WhisperForConditionalGeneration,
     TextStreamer,
     full,
+    PreTrainedTokenizer,
+    type ProgressCallback,
+    Processor,
+    PreTrainedModel,
 } from '@huggingface/transformers'
 
 const MAX_NEW_TOKENS = 264
@@ -13,11 +17,13 @@ const MAX_NEW_TOKENS = 264
  */
 class AutomaticSpeechRecognitionPipeline {
     static model_id = 'onnx-community/whisper-base'
-    static tokenizer = null
-    static processor = null
-    static model = null
+    static tokenizer: Promise<PreTrainedTokenizer> | null = null
+    static processor: Promise<Processor> | null = null
+    static model: Promise<PreTrainedModel> | null = null
 
-    static async getInstance(progress_callback = null) {
+    static async getInstance(
+        progress_callback: ProgressCallback | undefined = undefined
+    ) {
         this.tokenizer ??= AutoTokenizer.from_pretrained(this.model_id, {
             progress_callback,
         })
@@ -42,7 +48,13 @@ class AutomaticSpeechRecognitionPipeline {
 }
 
 let processing = false
-async function generate({ audio, language }) {
+async function generate({
+    audio,
+    language,
+}: {
+    audio: Float32Array
+    language: string
+}) {
     if (processing) return
     processing = true
 
@@ -56,7 +68,7 @@ async function generate({ audio, language }) {
 
         let startTime
         let numTokens = 0
-        let tps
+        let tps: number | undefined
         const token_callback_function = () => {
             startTime ??= performance.now()
 

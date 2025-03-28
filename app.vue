@@ -87,7 +87,7 @@ const onMessageReceived = (e: MessageEvent<WorkerMessage>) => {
 onMounted(() => {
     if (!worker.value) {
         // Create the worker if it does not yet exist.
-        worker.value = new Worker(new URL('./lib/worker.js', import.meta.url), {
+        worker.value = new Worker(new URL('./lib/worker.ts', import.meta.url), {
             type: 'module',
         })
     }
