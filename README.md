@@ -1,5 +1,7 @@
 # [Transformers.js](https://huggingface.co/docs/transformers.js/en/index) + NuxtJS
 
+![realtime transcription showcase](https://i.imgur.com/RutByr0.gif)
+
 Here's a basic demo using these two tools. Transformers.js is typically used within a web worker for several important performance reasons:
 
 -   Main thread protection
