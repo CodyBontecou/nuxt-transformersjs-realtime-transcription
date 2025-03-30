@@ -8,6 +8,7 @@ Here's a basic demo using these two tools. Transformers.js is typically used wit
 -   Parallelization
 
 This is a barebones demo showing Transformers.js working with Whisper in the browser for realtime audio to text transcription.
+It uses [whisper-base](https://huggingface.co/onnx-community/whisper-base), a 290mb model, and is able to transcribe audio in all of the languages listed [here](https://github.com/openai/whisper/blob/248b6cb124225dd263bb9bd32d060b6517e067f8/whisper/tokenizer.py#L79). It can be ran entirely offline once the model is loaded in.
 
 ![realtime transcription showcase](https://i.imgur.com/RutByr0.gif)
 
