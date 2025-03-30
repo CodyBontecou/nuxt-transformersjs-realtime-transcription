@@ -14,14 +14,16 @@ This code is deployed here - https://nuxt-transformersjs-realtime-transcription.
 
 ## Run locally
 
-- Install dependencies
+- Install dependencies.
 
 ```bash
 npm install
 ```
 
-- Run local server
+- Run local server.
 
 ```bash
 npm run dev
 ```
+
+- Navigate to local server. The default is localhost:3000.
