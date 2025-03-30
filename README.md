@@ -10,3 +10,18 @@ Here's a basic demo using these two tools. Transformers.js is typically used wit
 This is a barebones demo showing Transformers.js working with Whisper in the browser for realtime audio to text transcription.
 
 This code is deployed here - https://nuxt-transformersjs-realtime-transcription.vercel.app/
+
+
+## Run locally
+
+- Install dependencies
+
+```bash
+npm install
+```
+
+- Run local server
+
+```bash
+npm run dev
+```
