@@ -30,3 +30,13 @@ npm run dev
 ```
 
 - Navigate to local server. The default is localhost:3000.
+
+## Not working?
+
+You may be running into the a webgpu error. Check your browser's console to see if "Uncaught (in promise) Error: no available backend found. ERR: [webgpu] Error: Failed to get GPU adapter. You may need to enable flag "--enable-unsafe-webgpu" if you are using Chrome." is showing, do the following:
+
+### Enable the WebGPU Flag:
+1. Open Chrome and navigate to chrome://flags in the address bar.
+2. Search for #enable-unsafe-webgpu.
+3. Set the flag to Enabled.
+4. Relaunch Chrome when prompted.
