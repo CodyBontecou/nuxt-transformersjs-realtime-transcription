@@ -175,7 +175,7 @@ onUnmounted(() => {
 
 <template>
     <div
-        class="flex flex-col h-screen mx-auto justify-end text-gray-800 dark:text-gray-200 bg-white dark:bg-gray-900"
+        class="flex flex-col h-screen mx-auto justify-center text-gray-800 dark:text-gray-200 bg-white dark:bg-gray-900"
     >
         <div
             class="h-full overflow-auto scrollbar-thin flex justify-center items-center flex-col relative"
