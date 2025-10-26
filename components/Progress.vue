@@ -18,7 +18,7 @@ const formatBytes = (size: number) => {
         class="w-full bg-gray-100 dark:bg-gray-700 text-left rounded-lg overflow-hidden mb-0.5"
     >
         <div
-            class="bg-blue-400 whitespace-nowrap px-1 text-sm"
+            class="bg-blue-400 whitespace-nowrap px-1 text-base md:text-lg"
             :style="{ width: `${percentage ?? 0}%` }"
         >
             {{ text }} ({{ (percentage ?? 0).toFixed(2) }}%
