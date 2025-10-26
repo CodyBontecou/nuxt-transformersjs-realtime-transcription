@@ -181,10 +181,10 @@ onUnmounted(() => {
             class="h-full overflow-auto scrollbar-thin flex justify-center items-center flex-col relative"
         >
             <div
-                class="flex flex-col items-center mb-1 max-w-[400px] text-center"
+                class="flex flex-col items-center mb-4 max-w-[600px] text-center"
             >
-                <h1 class="text-4xl font-bold mb-1">Whisper WebGPU</h1>
-                <h2 class="text-xl font-semibold">
+                <h1 class="text-5xl md:text-6xl font-bold mb-3">Whisper WebGPU</h1>
+                <h2 class="text-2xl md:text-3xl font-semibold">
                     Real-time in-browser speech recognition
                 </h2>
             </div>
@@ -192,7 +192,7 @@ onUnmounted(() => {
             <div class="flex flex-col items-center px-4">
                 <template v-if="status === null">
                     <button
-                        class="border px-4 py-2 rounded-lg bg-blue-400 text-white hover:bg-blue-500 disabled:bg-blue-100 disabled:cursor-not-allowed select-none"
+                        class="border px-6 py-3 rounded-lg bg-blue-400 text-white hover:bg-blue-500 disabled:bg-blue-100 disabled:cursor-not-allowed select-none text-lg"
                         @click="
                             () => {
                                 worker?.postMessage({ type: 'load' })
@@ -212,11 +212,11 @@ onUnmounted(() => {
                     />
                     <div v-if="status === 'ready'" class="relative">
                         <p
-                            class="w-full h-[80px] overflow-y-auto overflow-wrap-anywhere border rounded-lg p-2"
+                            class="w-full h-[80px] overflow-y-auto overflow-wrap-anywhere border rounded-lg p-2 text-base"
                         >
                             {{ text }}
                         </p>
-                        <span v-if="tps" class="absolute bottom-0 right-0 px-1">
+                        <span v-if="tps" class="absolute bottom-0 right-0 px-1 text-sm">
                             {{ tps.toFixed(2) }} tok/s
                         </span>
                     </div>
@@ -226,7 +226,7 @@ onUnmounted(() => {
                     v-if="status === 'loading'"
                     class="w-full max-w-[500px] text-left mx-auto p-4"
                 >
-                    <p class="text-center">{{ loadingMessage }}</p>
+                    <p class="text-center text-lg">{{ loadingMessage }}</p>
                     <Progress
                         v-for="(item, i) in progressItems"
                         :key="i"
